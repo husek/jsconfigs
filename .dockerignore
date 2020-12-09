@@ -1,0 +1,7 @@
+node_modules
+npm-debug.log
+nginx.conf
+.env
+.env.example
+build
+.yalc

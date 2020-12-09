@@ -1,0 +1,81 @@
+{
+  "extends": [
+    "react-app",
+    "airbnb",
+    "prettier",
+    "prettier/react"
+  ],
+  "plugins": [
+    "prettier"
+  ],
+  "rules": {
+    "react/no-array-index-key": 0,
+    "react/no-unescaped-entities": 0,
+    "react/jsx-props-no-spreading": 0,
+    "jsx-a11y/anchor-has-content": 0,
+    "eol-last": ["error", "always"],
+    // Literals and small JSX calls as {variables} should be allowed in a single line, this won't prevent <App><Child/></App> though, so it's your job to make sure that won't happen.
+    "react/jsx-one-expression-per-line": [1, { "allow": "single-child" }],
+    // react-hooks/exhaustive-deps right now doesn't support empty or side-effect deps, therefore is temporarily disabled
+    "react-hooks/exhaustive-deps": 0,
+    // yeah yeah easy there AirBnb, we still want to declare private functions in a readable fashion
+    "no-underscore-dangle": 0,
+    // we gotta send some fields in snake_case to the BE, so unfortunately this one will be set to false
+    "camelcase": 0,
+    // cmon lint, lemme debug in peace
+    "no-console": 0,
+    // just use .isRequired
+    "react/require-default-props": 0,
+    // Used for on-the-fly require (such as polyfills)
+    "global-require": 0,
+    // yeah right cuz <> is way more readable than <React.Fragment /> pff seriously AirBnb?
+    "react/jsx-fragments" : 0,
+    // Necessary for async (and hot-reloadable) redux stores
+    "no-param-reassign": 0,
+    // JSX Props is necessary into componente composition
+    "react/forbid-prop-types": 0,
+    "no-bitwise": 0,
+    "no-plusplus": 0,
+    "no-shadow": 0,
+    "jsx-a11y/anchor-is-valid": 0,
+    "jsx-a11y/click-events-have-key-events": 0,
+    "jsx-a11y/no-static-element-interactions": 0,
+    "jsx-a11y/media-has-caption": 0,
+    "import/no-unresolved": [
+      "error",
+      {
+        "ignore": [
+          "src/"
+        ]
+      }
+    ],
+    "no-case-declarations": 0,
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [
+          ["components", "./src/components"],
+          ["containers", "./src/containers"],
+          ["utils", "./src/utils"],
+          ["redux", "./src/redux"],
+          ["assets", "./src/assets"]
+        ]
+      },
+      "node": {
+        "paths": [
+          "src"
+        ]
+      }
+    }
+  }
+}
