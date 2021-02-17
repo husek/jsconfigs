@@ -51,6 +51,24 @@
         ]
       }
     ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/*.test.ts",
+          "**/*.spec.ts",
+          "**/*.test.js",
+          "**/*.spec.js",
+          "**/*.test.jsx",
+          "**/*.spec.jsx",
+          "**/*.test.tsx",
+          "**/*.spec.tsx",
+          "./tests/",
+          "./mocks/",
+          "**/__tests__/"
+        ]
+      }
+    ],
     "no-case-declarations": 0,
     "react/jsx-filename-extension": [
       1,
